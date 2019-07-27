@@ -1,6 +1,6 @@
 # vue-project
 
-[Vue.jsのプロジェクト作成(Vuex、vue-router、Axios、ESLint、Prettier、Jest)](https://qiita.com/yoshi0518/items/f07bd9fb650066ca4389)
+[Vue.js＋Firebaseプロジェクト作成(Authentication、Firestore、Storage、Functions)](https://qiita.com/yoshi0518/items/e16d600a06f9acb2f815)
 
 ## セットアップ
 ```
@@ -25,4 +25,15 @@ npm run test
 ## ESLint、Prettier
 ```
 npm run lint
+```
+
+## Firebaseデプロイ
+```
+firebase deploy
+
+#Hostingのみ
+firebase deploy --only hosting
+
+#Functionsのみ
+firebase deploy --only functions
 ```
