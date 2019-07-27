@@ -1,6 +1,6 @@
-# vue-project
+# vue-firebase-project
 
-[Vue.js＋Firebaseプロジェクト作成(Authentication、Firestore、Storage、Functions)](https://qiita.com/yoshi0518/items/e16d600a06f9acb2f815)
+[Vue.js＋Firebaseプロジェクト作成(Hosting、Authentication、Firestore、Storage、Functions)](https://qiita.com/yoshi0518/items/e16d600a06f9acb2f815)
 
 ## セットアップ
 ```
