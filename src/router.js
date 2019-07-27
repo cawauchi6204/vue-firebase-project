@@ -7,6 +7,9 @@ import Home from './views/home.vue'
 import StaffIndex from './views/staff/index.vue'
 import StaffAdd from './views/staff/add.vue'
 import StaffUpdate from './views/staff/update.vue'
+import TaskIndex from './views/task/index.vue'
+import TaskAdd from './views/task/add.vue'
+import TaskUpdate from './views/task/update.vue'
 
 Vue.use(Router)
 
@@ -43,6 +46,21 @@ const router = new Router({
       path: '/staff/update/:id',
       name: 'staff/update',
       component: StaffUpdate,
+    },
+    {
+      path: '/task',
+      name: 'task',
+      component: TaskIndex,
+    },
+    {
+      path: '/task/add',
+      name: 'task/add',
+      component: TaskAdd,
+    },
+    {
+      path: '/task/update/:id',
+      name: 'task/update',
+      component: TaskUpdate,
     },
   ],
 })
