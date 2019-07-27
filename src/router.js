@@ -4,6 +4,9 @@ import firebase from '@/plugins/firebase'
 import Login from './views/auth/login.vue'
 import Error from './views/auth/error.vue'
 import Home from './views/home.vue'
+import StaffIndex from './views/staff/index.vue'
+import StaffAdd from './views/staff/add.vue'
+import StaffUpdate from './views/staff/update.vue'
 
 Vue.use(Router)
 
@@ -25,6 +28,21 @@ const router = new Router({
       path: '/',
       name: 'home',
       component: Home,
+    },
+    {
+      path: '/staff',
+      name: 'staff',
+      component: StaffIndex,
+    },
+    {
+      path: '/staff/add',
+      name: 'staff/add',
+      component: StaffAdd,
+    },
+    {
+      path: '/staff/update/:id',
+      name: 'staff/update',
+      component: StaffUpdate,
     },
   ],
 })
