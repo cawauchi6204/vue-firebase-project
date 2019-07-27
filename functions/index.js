@@ -4,6 +4,7 @@ import admin from 'firebase-admin'
 
 admin.initializeApp()
 const db = admin.firestore()
+const storage = admin.storage()
 
 // exports.helloWorld = functions.https.onRequest((request, response) => {
 //   response.send('Hello from Firebase!')
@@ -127,4 +128,42 @@ export const funcDeleteTask = functions.https.onCall(async (data, context) => {
       response.error = error
     })
   return response
+})
+
+export const setMetaData = functions.storage.object().onFinalize((object, context) => {
+  const ref = storage.bucket().file(object.name)
+  const metaData = {
+    cacheControl: 'max-age=300',
+  }
+  ref
+    .setMetadata(metaData)
+    .then(res => {
+      console.info(res)
+    })
+    .catch(error => {
+      console.error(error)
+    })
+
+  db.collection('storage_func')
+    .add({
+      bucket: object.bucket,
+      contentType: object.contentType,
+      id: object.id,
+      md5Hash: object.md5Hash,
+      mediaLink: object.mediaLink,
+      name: object.name,
+      selfLink: object.selfLink,
+      size: object.size,
+      storageClass: object.storageClass,
+      timeCreated: object.timeCreated,
+      downloadUrl: `https://firebasestorage.googleapis.com/v0/b/${object.bucket}/o/${encodeURIComponent(
+        object.name
+      )}?alt=media`,
+    })
+    .then(res => {
+      console.log(res)
+    })
+    .catch(error => {
+      console.log(error)
+    })
 })

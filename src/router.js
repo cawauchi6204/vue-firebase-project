@@ -10,6 +10,12 @@ import StaffUpdate from './views/staff/update.vue'
 import TaskIndex from './views/task/index.vue'
 import TaskAdd from './views/task/add.vue'
 import TaskUpdate from './views/task/update.vue'
+import StorageIndex from './views/storage/index.vue'
+import Storage01 from './views/storage/storage01.vue'
+import Storage02 from './views/storage/storage02.vue'
+import Storage03 from './views/storage/storage03.vue'
+import Storage04 from './views/storage/storage04.vue'
+import Storage05 from './views/storage/storage05.vue'
 
 Vue.use(Router)
 
@@ -61,6 +67,36 @@ const router = new Router({
       path: '/task/update/:id',
       name: 'task/update',
       component: TaskUpdate,
+    },
+    {
+      path: '/storage',
+      name: 'storage',
+      component: StorageIndex,
+    },
+    {
+      path: '/storage/01',
+      name: 'storage/01',
+      component: Storage01,
+    },
+    {
+      path: '/storage/02',
+      name: 'storage/02',
+      component: Storage02,
+    },
+    {
+      path: '/storage/03',
+      name: 'storage/03',
+      component: Storage03,
+    },
+    {
+      path: '/storage/04',
+      name: 'storage/04',
+      component: Storage04,
+    },
+    {
+      path: '/storage/05',
+      name: 'storage/05',
+      component: Storage05,
     },
   ],
 })
